@@ -13,7 +13,7 @@ describe("About Objects", function () {
 
     it("should confirm that properties are case sensitive", function () {
       expect(megalomaniac.henchwoman).toBe("Harley");
-      expect(megalomaniac.henchWoman).toBe("harley");
+      expect(megalomaniac.henchWoman).toBe(undefined);
     });
   });
 
@@ -44,8 +44,8 @@ describe("About Objects", function () {
       }
     };
 
-    expect(currentYear).toBe(FILL_ME_IN);
-    expect(megalomaniac.calculateAge()).toBe(FILL_ME_IN);
+    expect(currentYear).toBe(2015);
+    expect(megalomaniac.calculateAge()).toBe(45);
   });
 
   describe("'in' keyword", function () {
