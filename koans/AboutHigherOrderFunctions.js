@@ -78,12 +78,12 @@ describe("About Higher Order Functions", function () {
 
   it("should use chain() ... .value() to use multiple higher order functions", function() {
       var result = _([ [0, 1], 2 ]).chain()
-                       .flatten()
-                       .map(function(x) { return x+1 } )
+                       .flatten()//[0, 1, 2]
+                       .map(function(x) { return x+1 } )//[1, 2, 3]
                        .reduce(function (sum, x) { return sum + x })
                        .value();
 
-      expect(result).toEqual(FILL_ME_IN);
+      expect(result).toEqual(6);
   });
 
 });
