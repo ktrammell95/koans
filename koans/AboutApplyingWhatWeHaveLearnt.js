@@ -39,9 +39,21 @@ describe("About Applying What We Have Learnt", function() {
 
       var productsICanEat = [];
 
+      //need to filter out nuts and mushrooms, then determine how many pizzas left
+      var nuts = _.filter(products, function(product) {
+          return product.containsNuts === true;
+      });
+
+      var mushrooms = _.filter(products, function(product) {
+        return _.any(product.ingredients, function(ingredient) {
+          return ingredient === "mushrooms";
+        });
+      });
+
+      var productsICanEat = _.difference(products, mushrooms, nuts);
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
